@@ -1,0 +1,19 @@
+version: '3'
+services:
+  www3:
+    build: .
+    privileged: true
+    restart: always
+    tty: true
+    ports:
+      - 8081:80
+  db3:
+    image: mysql:5.5
+    restart: always
+    privileged: true
+    tty: true
+    ports:
+      - 3335:3306
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: password
